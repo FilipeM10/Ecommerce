@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "name": "project",
+  "version": "1.0.0",
+  "description": "Este é um projeto autônomo, feito para cadastro login e armazenamento de produtos",
+  "main": "src/server.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FilipeM10/Ecommerce.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Filipe Monteiro Anjos Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FilipeM10/Ecommerce/issues"
+  },
+  "homepage": "https://github.com/FilipeM10/Ecommerce#readme"
+}
