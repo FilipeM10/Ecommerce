@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "dotenv": "^17.1.0",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1",
+    "sequelize": "^6.37.7"
+  },
+  "name": "project",
+  "version": "1.0.0",
+  "description": "Este é um projeto autônomo, feito para cadastro login e armazenamento de produtos",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    ".": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FilipeM10/Ecommerce.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Filipe Monteiro Anjos Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FilipeM10/Ecommerce/issues"
+  },
+  "homepage": "https://github.com/FilipeM10/Ecommerce#readme"
+}
