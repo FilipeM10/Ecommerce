@@ -1,15 +1,21 @@
 import Usuario from '../models/usuario.js';
+import bcrypt from 'bcrypt'
 
 export const cadastro = async (req, res) => {
-    const {userName, senha} = (req.body)
-    if(!userName || !senha || userName.length === 0 || senha.length === 0) {
-        return res.status(404).json({message: "Todos os campos devem ser preenchidos !"})
-    };
+    const {email, userName, senha} = (req.body)
+    if(!email || !userName || !senha) {
+        return res.status(400).json({message: "Todos os campos devem ser preenchidos !"})
+    }
     try {
-        const novoUsuario = new Usuario({userName, senha})
-        await novoUsuario.save()
+        const verificarExistente = await Usuario.findOne({ where: {email} }).catch(()=> null)
+        if(verificarExistente) return res.status(409).json({message: 'Este email já existe !'});
 
-        res.status(200).json({message: 'Usuário cadastrado com sucesso !'})
+        const saltRounds = 10;
+        const hash = await bcrypt.hash(senha, saltRounds)
+
+        const novoUsuario = await Usuario.create({email, userName, senha: hash})
+
+        res.status(201).json({id: novoUsuario.id})
     } catch (error) {
         console.error(error)
         res.status(500).json({message: 'Erro interno do servidor'})

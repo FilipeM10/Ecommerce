@@ -1,5 +1,7 @@
 import { Sequelize } from 'sequelize'
-import 'dotenv/config'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const {
     DB_NAME,
@@ -11,8 +13,8 @@ const {
 
 const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASS, {
     host: DB_HOST,
-    dialect: 'mysql',
     port: DB_PORT,
+    dialect: 'mysql',
     logging: false
 })
 

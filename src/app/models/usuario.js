@@ -1,18 +1,24 @@
 import { DataTypes } from 'sequelize'
 import database from '../config/database.js'
 
-const Usuario = database.define('usuario', {
+const Usuario = database.define('user', {
+    email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        primaryKey: true,
+        unique: true
+    },
     userName: {
         type: DataTypes.STRING,
         allowNull: false,
-        primaryKey: true
+        unique: true
     },
     senha: {
         type: DataTypes.STRING,
         allowNull: false
     }
 }, {
-    tableName: 'cadastro_usuario',
+    tableName: 'usuario',
     timestamps: true
 })
 

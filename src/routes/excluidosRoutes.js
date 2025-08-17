@@ -1,9 +1,9 @@
 import * as controllerDadosExcluidos from '../app/controllers/deletados.js';
 import express from 'express';
 
-const deletRouter = express.Router();
+const router = express.Router();
 
-deletRouter.get('/deletados/filtrado', controllerDadosExcluidos.excluidos);
-deletRouter.get('/deletados/geral', controllerDadosExcluidos.dadosGerais);
+router.get('/deletados/filtrado', controllerDadosExcluidos.excluidos);
+router.get('/deletados/geral', controllerDadosExcluidos.dadosGerais);
 
-export default deletRouter;
+export default router;

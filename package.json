@@ -1,13 +1,15 @@
 {
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "dotenv": "^17.1.0",
     "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.14.1",
     "sequelize": "^6.37.7"
   },
   "name": "project",
   "version": "1.0.0",
-  "description": "Este é um projeto autônomo, feito para cadastro login e armazenamento de produtos",
+  "description": "Este é um projeto independente, feito para cadastro login e armazenamento de produtos",
   "main": "src/server.js",
   "type": "module",
   "scripts": {

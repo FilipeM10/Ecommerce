@@ -1,8 +1,13 @@
 import * as cadastroController from '../app/controllers/cadastroController.js'
+import verificarToken from '../app/middlewares/auth.js'
 import express from 'express'
 
-const cadastroRouter = express.Router();
+const router = express.Router();
 
-cadastroRouter.post('/', cadastroController.cadastro)
+router.post('/', cadastroController.cadastro)
 
-export default cadastroRouter;
+router.post('/rotaAutenticada', verificarToken, (req, res) => {
+    res.json({ message: 'Acesso permitido', usuario: req.usuario })
+});
+
+export default router;
